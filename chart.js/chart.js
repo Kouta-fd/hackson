@@ -2,14 +2,20 @@
 // const user_scores 
 // const *developers avarage scores 
 let fullstack_score
+let backend_score
 
 let url = 'https://api.sheety.co/f09c39af78f0495cbe279de19fc43594/無題のスプレッドシート/シート1';
 fetch(url)
 .then((response) => response.json())
 .then(json => {
   // Do something with the data
-  fullstack_score = json.シート1
-  console.log(json.シート1[0]['backend']);
+  backend_score = json.シート1[0]['scores']
+  frontend_score = json.シート1[1]['scores']
+  fullstack_score = json.シート1[2]['scores']
+
+
+  console.log(backend_score);
+  console.log(frontend_score)
   console.log(fullstack_score)
   
 })
@@ -17,7 +23,7 @@ fetch(url)
 
 
 //上の処理が遅いから処理が終了する前にscoreが定義される？
-console.log(fullstack_score)
+//console.log(fullstack_score)
 
 // set data
 const data = {
