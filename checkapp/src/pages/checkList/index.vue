@@ -5,7 +5,9 @@
 
     <div v-for="csitem in csitems" :key="csitem.id">
       <label for="CS-1">
+
         <input type="checkbox" name="CS" v-model="csitem.checked" />{{
+
           csitem.text
         }}</label
       >
@@ -13,7 +15,9 @@
     <h2>2.Backend development</h2>
     <div v-for="backenditem in backenditems" :key="backenditem.id">
       <label for="backend-1">
+
         <input type="checkbox" name="backend" v-model="backenditem.checked" />{{
+
           backenditem.text
         }}</label
       >
@@ -21,17 +25,21 @@
     <h2>3.Database</h2>
     <div v-for="databaseitem in databaseitems" :key="databaseitem.id">
       <label for="database-1">
+
         <input
           type="checkbox"
           name="database"
           v-model="databaseitem.checked"
         />{{ databaseitem.text }}</label
+
       >
     </div>
     <h2>4.Infrastructure</h2>
     <div v-for="infraitem in infraitems" :key="infraitem.id">
       <label for="infra-1">
+
         <input type="checkbox" name="infra" v-model="infraitem.checked" />{{
+
           infraitem.text
         }}</label
       >
@@ -39,21 +47,25 @@
     <h2>5.Frontend development</h2>
     <div v-for="frontenditem in frontenditems" :key="frontenditem.id">
       <label for="front-1">
+
         <input
           type="checkbox"
           name="frontend"
           v-model="frontenditem.checked"
         />{{ frontenditem.text }}</label
+
       >
     </div>
     <h2>6.Security</h2>
     <div v-for="securityitem in securityitems" :key="securityitem.id">
       <label for="security-1">
+
         <input
           type="checkbox"
           name="security"
           v-model="securityitem.checked"
         />{{ securityitem.text }}</label
+
       >
     </div>
 
@@ -233,6 +245,7 @@ export default {
     result() {
       let values = 0;
       for (var i = 0; i < this.csitems.length; i++) {
+      
         if (this.csitems[i].checked) {
           values++;
         }
@@ -294,6 +307,7 @@ export default {
         //console.log((100 * securityv) / 4),
       ];
       console.log(total);
+
     },
   },
 };
