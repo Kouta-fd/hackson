@@ -6,7 +6,7 @@
 
     <div v-for="csitem in csitems" :key="csitem.id">
       <label for="color-1">
-        <input type="checkbox" name="CS" v-model="boolean"/>{{ csitem.text }}</label
+        <input type="checkbox" name="CS" v-model="csitem.checked"/>{{ csitem.text }}</label
       >
     </div>
     <button id="btn" @click="result">結果を見る</button>
@@ -21,22 +21,22 @@ export default {
         {
           id: "color-1",
           text: "業務の中で発生したエラーについて、自力で調べられる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "color-2",
           text: "英語のドキュメントやブログ記事、Q&Aサイトを読むことができる。",
-          boolean: false,
+          checked: false,
         },
         {
           id: "color-3",
           text: "CUI経由でSSHログインやファイル操作、パッケージやユーザー管理などの基本操作ができる。",
-          boolean: false,
+          checked: false,
         },
         {
           id: "color-4",
           text: "必要に応じて、シェルスクリプトを使って作業を自動化したり、定期実行したりできる",
-          boolean: false,
+          checked: false,
         },
       ],
     };
@@ -45,7 +45,8 @@ export default {
     result() {
       let values = 0;
       for(var i=0;i<this.csitems.length; i++) {
-        if(this.boolean==true) {
+        console.log(this.csitems[i].checked);
+        if(this.csitems[i].checked) {
           values ++;
         }
       }
