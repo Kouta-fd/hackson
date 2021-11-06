@@ -5,21 +5,21 @@ let fullstack_score
 let backend_score
 
 
-let url = 'https://api.sheety.co/f09c39af78f0495cbe279de19fc43594/無題のスプレッドシート/data';
-fetch(url)
-.then((response) => response.json())
-.then(json => {
-  // Do something with the data
-  backend_score = json.data[0]['scores']
-  frontend_score = json.data[1]['scores']
-  fullstack_score = json.data[2]['scores']
+// let url = 'https://api.sheety.co/f09c39af78f0495cbe279de19fc43594/無題のスプレッドシート/data';
+// fetch(url)
+// .then((response) => response.json())
+// .then(json => {
+//   // Do something with the data
+//   backend_score = json.data[0]['scores']
+//   frontend_score = json.data[1]['scores']
+//   fullstack_score = json.data[2]['scores']
 
-  console.log(backend_score);
-  console.log(frontend_score)
-  console.log(fullstack_score)
-  return backend_score;
+//   console.log(backend_score);
+//   console.log(frontend_score)
+//   console.log(fullstack_score)
+//   return backend_score;
   
-})
+// })
 
 
 
