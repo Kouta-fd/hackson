@@ -5,7 +5,9 @@
 
     <div v-for="csitem in csitems" :key="csitem.id">
       <label for="CS-1">
-        <input type="checkbox" name="CS" v-model="checked" />{{
+
+        <input type="checkbox" name="CS" v-model="csitem.checked" />{{
+
           csitem.text
         }}</label
       >
@@ -13,7 +15,9 @@
     <h2>2.Backend development</h2>
     <div v-for="backenditem in backenditems" :key="backenditem.id">
       <label for="backend-1">
-        <input type="checkbox" name="backend" v-model="checked" />{{
+
+        <input type="checkbox" name="backend" v-model="backenditem.checked" />{{
+
           backenditem.text
         }}</label
       >
@@ -21,15 +25,21 @@
     <h2>3.Database</h2>
     <div v-for="databaseitem in databaseitems" :key="databaseitem.id">
       <label for="database-1">
-        <input type="checkbox" name="database" v-model="checked" />{{
-          databaseitem.text
-        }}</label
+
+        <input
+          type="checkbox"
+          name="database"
+          v-model="databaseitem.checked"
+        />{{ databaseitem.text }}</label
+
       >
     </div>
     <h2>4.Infrastructure</h2>
     <div v-for="infraitem in infraitems" :key="infraitem.id">
       <label for="infra-1">
-        <input type="checkbox" name="infra" v-model="checked" />{{
+
+        <input type="checkbox" name="infra" v-model="infraitem.checked" />{{
+
           infraitem.text
         }}</label
       >
@@ -37,17 +47,25 @@
     <h2>5.Frontend development</h2>
     <div v-for="frontenditem in frontenditems" :key="frontenditem.id">
       <label for="front-1">
-        <input type="checkbox" name="frontend" v-model="checked" />{{
-          frontenditem.text
-        }}</label
+
+        <input
+          type="checkbox"
+          name="frontend"
+          v-model="frontenditem.checked"
+        />{{ frontenditem.text }}</label
+
       >
     </div>
     <h2>6.Security</h2>
     <div v-for="securityitem in securityitems" :key="securityitem.id">
       <label for="security-1">
-        <input type="checkbox" name="security" v-model="checked" />{{
-          securityitem.text
-        }}</label
+
+        <input
+          type="checkbox"
+          name="security"
+          v-model="securityitem.checked"
+        />{{ securityitem.text }}</label
+
       >
     </div>
 
@@ -227,11 +245,69 @@ export default {
     result() {
       let values = 0;
       for (var i = 0; i < this.csitems.length; i++) {
-        if (!this.csitems[i].boolean) {
+      
+        if (this.csitems[i].checked) {
           values++;
         }
       }
-      console.log(values);
+
+      // eslint-disable-next-line no-unused-vars
+      let backv = 0;
+      for (i = 0; i < this.backenditems.length; i++) {
+        if (this.backenditems[i].checked) {
+          backv++;
+        }
+      }
+
+      // eslint-disable-next-line no-unused-vars
+      let databasev = 0;
+      for (i = 0; i < this.databaseitems.length; i++) {
+        if (this.databaseitems[i].checked) {
+          databasev++;
+        }
+      }
+
+      // eslint-disable-next-line no-unused-vars
+      let infrav = 0;
+      for (i = 0; i < this.infraitems.length; i++) {
+        if (this.infraitems[i].checked) {
+          infrav++;
+        }
+      }
+
+      // eslint-disable-next-line no-unused-vars
+      let frontv = 0;
+      for (i = 0; i < this.frontenditems.length; i++) {
+        if (this.frontenditems[i].checked) {
+          frontv++;
+        }
+      }
+
+      // eslint-disable-next-line no-unused-vars
+      let securityv = 0;
+      for (i = 0; i < this.securityitems.length; i++) {
+        if (this.securityitems[i].checked) {
+          securityv++;
+        }
+      }
+
+      // eslint-disable-next-line no-unused-vars
+      var total = [
+        (100 * values) / 8,
+        (100 * backv) / 3,
+        (100 * databasev) / 5,
+        (100 * infrav) / 5,
+        (100 * frontv) / 5,
+        (100 * securityv) / 4,
+        //console.log((100 * values) / 8),
+        //console.log((100 * backv) / 3),
+        //console.log((100 * databasev) / 5),
+        //console.log((100 * infrav) / 5),
+        //console.log((100 * frontv) / 5),
+        //console.log((100 * securityv) / 4),
+      ];
+      console.log(total);
+
     },
   },
 };
