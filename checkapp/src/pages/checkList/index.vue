@@ -5,37 +5,49 @@
 
     <div v-for="csitem in csitems" :key="csitem.id">
       <label for="CS-1">
-        <input type="checkbox" name="CS" v-model="boolean"/>{{ csitem.text }}</label
+        <input type="checkbox" name="CS" v-model="checked" />{{
+          csitem.text
+        }}</label
       >
     </div>
     <h2>2.Backend development</h2>
     <div v-for="backenditem in backenditems" :key="backenditem.id">
       <label for="backend-1">
-        <input type="checkbox" name="backend" v-model="boolean"/>{{ backenditem.text }}</label
+        <input type="checkbox" name="backend" v-model="checked" />{{
+          backenditem.text
+        }}</label
       >
     </div>
     <h2>3.Database</h2>
     <div v-for="databaseitem in databaseitems" :key="databaseitem.id">
       <label for="database-1">
-        <input type="checkbox" name="database" v-model="boolean"/>{{ databaseitem.text }}</label
+        <input type="checkbox" name="database" v-model="checked" />{{
+          databaseitem.text
+        }}</label
       >
     </div>
     <h2>4.Infrastructure</h2>
     <div v-for="infraitem in infraitems" :key="infraitem.id">
       <label for="infra-1">
-        <input type="checkbox" name="infra" v-model="boolean"/>{{ infraitem.text }}</label
+        <input type="checkbox" name="infra" v-model="checked" />{{
+          infraitem.text
+        }}</label
       >
     </div>
     <h2>5.Frontend development</h2>
     <div v-for="frontenditem in frontenditems" :key="frontenditem.id">
       <label for="front-1">
-        <input type="checkbox" name="frontend" v-model="boolean"/>{{ frontenditem.text }}</label
+        <input type="checkbox" name="frontend" v-model="checked" />{{
+          frontenditem.text
+        }}</label
       >
     </div>
     <h2>6.Security</h2>
     <div v-for="securityitem in securityitems" :key="securityitem.id">
       <label for="security-1">
-        <input type="checkbox" name="security" v-model="boolean"/>{{ securityitem.text }}</label
+        <input type="checkbox" name="security" v-model="checked" />{{
+          securityitem.text
+        }}</label
       >
     </div>
 
@@ -51,162 +63,162 @@ export default {
         {
           id: "CS-1",
           text: "業務の中で発生したエラーについて、自力で調べられる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "CS-2",
           text: "英語のドキュメントやブログ記事、Q&Aサイトを読むことができる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "CS-3",
           text: "CUI経由でSSHログインやファイル操作、パッケージやユーザー管理などの基本操作ができる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "CS-4",
           text: "必要に応じて、シェルスクリプトを使って作業を自動化したり、定期実行したりできる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "CS-5",
           text: "自分が行うコミットに対して、必要な差分を行単位、コードブロック単位で調整できる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "CS-6",
           text: "revertなど、コミット改変系の操作を知っており、リポジトリで事故が起きた時に適切に対処できる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "CS-7",
           text: "GithubFlowについて理解しており、プロジェクトに応じた必要なブランチ戦略を提案できる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "CS-8",
           text: "IPA 基本情報処理技術者試験を取得している、または同等の知識がある",
-          boolean: false,
+          checked: false,
         },
       ],
       backenditems: [
         {
           id: "backend-1",
           text: "コンパイラ言語(Java, C#, Golangなど)、スクリプト言語(PHP,Ruby,Python)を最低限１つずつは使える",
-          boolean: false,
+          checked: false,
         },
         {
           id: "backend-2",
           text: "MVCフレームワークについて精通しており、Webアプリケーションに頻出する機能について、適切に設計、実装できる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "backend-3",
           text: "アプリケーションレイヤーの実行パフォーマンスに関して、数十秒〜数分かかるレベルの処理やメモリ展開量が多くなる可能性がある場合に、適切にチューニングができる",
-          boolean: false,
+          checked: false,
         },
       ],
       databaseitems: [
         {
           id: "database-1",
           text: " RDBの初期設定(ユーザー管理や設定ファイルとか)ができる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "database-2",
           text: " 処理実装に必要なDBクエリについて、ORMとの連携を前提として、SQL構文レベルでも理解している",
-          boolean: false,
+          checked: false,
         },
         {
           id: "database-3",
           text: " 正規化やパフォーマンスを意識して、数十〜数百table位のデータベース設計ができる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "database-4",
           text: " データベース内部でのパフォーマンスチューニングや、Indexを用いた高速化ができる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "database-5",
           text: " インフラレベルでのパフォーマンスチューニングについて、代表的な手法についての知識があり、必要に応じて導入できる",
-          boolean: false,
+          checked: false,
         },
       ],
       infraitems: [
         {
           id: "infra-1",
           text: "dockerを使って、プロジェクトに必要な仮想環境を１から構築し、チームで共有できる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "infra-2",
           text: "クラウドインスタンス上で、Webサーバーを立ち上げるための手順書を作ることができる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "infra-3",
           text: "ステージング、開発環境のそれぞれの運用方針を定め、開発フェーズやフローに応じて各環境を運用・保守できる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "infra-4",
           text: "AWS or GCPを使って、システム開発に必要な構成を計画し、実際に構築することができる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "infra-5",
           text: "CIツールを用いて、環境構築や最新コードのデプロイが自動化できる",
-          boolean: false,
+          checked: false,
         },
       ],
       frontenditems: [
         {
           id: "front-1",
           text: "HTML/CSSについて精通し、画面デザインやUI/UXについて、デザイナーと必要な実装の連携ができる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "front-2",
           text: "SEOおよびkeywordやOGPなどのメタ情報についての基礎知識を持ち、必要に応じて方針などをプロダクトオーナーや専門ポジションの人と相談しながらサービスを運用できる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "front-3",
           text: "生JavaScriptおよびjQueryについての理解",
-          boolean: false,
+          checked: false,
         },
         {
           id: "front-4",
           text: "npmを用いてパッケージ管理や、ビルドやトランスパイル環境、ビルトインサーバーなどのJS開発環境を構築できる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "front-5",
           text: "フルスタックフレームワーク(React or Vue or Angular)について、最低1つは使用できる",
-          boolean: false,
+          checked: false,
         },
       ],
       securityitems: [
         {
           id: "security-1",
           text: "代表的な攻撃手法（XSS、SQLインジェクション、CORFなど）についての知識があり、定期的に情報を収集している",
-          boolean: false,
+          checked: false,
         },
         {
           id: "security-2",
           text: "サービスのインフラ構成全体に対して、セキュリティ方針と具体的な対応方針を計画し、運用することができる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "security-3",
           text: "企業に求められる個人情報保護やプライバシーポリシーについて理解し、システム上のデータの取り扱いについて関係部署と適切に連携し、システムに反映できる",
-          boolean: false,
+          checked: false,
         },
         {
           id: "security-4",
           text: "システムの可用性について理解し、プロジェクトの保守運用方針やトラブル対応について、適切に要件を定め、運用することができる",
-          boolean: false,
+          checked: false,
         },
       ],
     };
@@ -214,15 +226,13 @@ export default {
   methods: {
     result() {
       let values = 0;
-      for(var i=0;i<this.csitems.length; i++) {
-        if(!this.csitems[i].boolean) {
-          values ++;
+      for (var i = 0; i < this.csitems.length; i++) {
+        if (!this.csitems[i].boolean) {
+          values++;
         }
       }
       console.log(values);
-    }
+    },
   },
 };
-
-
 </script>
