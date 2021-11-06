@@ -17,6 +17,12 @@ export default new Router({
       name: 'checkList',
       component: ()=>
         import(/* webpackChunkName: "about" */"../pages/checkList")
+    },
+    {
+      path: '/result',
+      name: 'result',
+      component: ()=>
+        import(/* webpackChunkName: "about" */"../pages/result")
     }
   ]
 })
