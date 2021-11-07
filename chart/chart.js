@@ -15,7 +15,6 @@ export default{
 let fullstack_score
 let backend_score
 
-
 // let url = 'https://api.sheety.co/f09c39af78f0495cbe279de19fc43594/無題のスプレッドシート/data';
 // fetch(url)
 // .then((response) => response.json())

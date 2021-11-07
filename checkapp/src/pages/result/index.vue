@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import Rank from "../../components/Rank"
-import Chart from "./chart.js"
+import {Rank} from "../../components/Rank"
+import {Radar} from "vue-chartjs"
 export default {
+  extends: Radar,
   components: { 
-    Chart,
     Rank
   },
   data() {
