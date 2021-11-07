@@ -1,5 +1,5 @@
 <template>
-  <div class="rank">ランク</div>
+  <h1 class="rank">あなたのエンジニアスキル結果</h1>
 </template>
 
 <script>
@@ -11,6 +11,7 @@ export default {
 <style lang="css" scoped>
 .rank {
   text-align: center;
+  margin-bottom: 20px;
 }
 </style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

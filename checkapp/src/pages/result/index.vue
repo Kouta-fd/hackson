@@ -8,8 +8,9 @@
       :chartData="radarChartData"
       :options="radarChartOptions"
     ></radar-chart>
-    <router-link to="/checkList/">チェックリスト</router-link>
-    <router-link to="/">ホーム</router-link>
+    <div class="button">
+      <router-link class="btn" to="/">トップページに戻る</router-link>
+    </div>
   </div>
 </template>
 <script>
@@ -102,3 +103,35 @@ export default {
   },
 };
 </script>
+<style scoped>
+.button{
+    display: block;
+    width: 200px;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    text-align: center;
+  }
+
+  .button:hover{
+  /*ボタンを押したとき*/
+    text-decoration: none;
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
+
+  .btn{
+    text-decoration: none;
+    color: #fff;
+    
+  }
+</style>
