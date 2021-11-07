@@ -59,9 +59,9 @@
       >
     </div>
 
-    <button id="btn" @click="result">集計</button>
-    <div v-if="this.total.length != 0">
-      <router-link
+    <div class="btn"><button id="btn" @click="result">集計</button></div>
+    <div  class ="result" v-if="this.total.length != 0">
+      <router-link class="link"
         :to="{
           name: 'result',
           query: { id: total },
@@ -304,3 +304,44 @@ export default {
   },
 };
 </script>
+
+
+<style scoped>
+.result{
+  text-align: center;
+}
+button {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+.btn{
+  text-align: center;
+}
+.link{
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: solid 1px #008CBA;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.link:hover{
+  color: #008CBA;
+  background-color: white;
+  transition: .5s;
+}
+</style>
