@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import Rank from "../../components/Rank"
+import Rank from "../../components/Rank";
 export default {
   components: { Rank },
 };
