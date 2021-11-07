@@ -4,18 +4,22 @@
       <!-- この中にグラフ表示のコードを書いてください -->
     </div>
     <Rank></Rank>
-    <radar-chart :chartData='radarChartData' :options='radarChartOptions'></radar-chart>
+    <radar-chart
+      :chartData="radarChartData"
+      :options="radarChartOptions"
+    ></radar-chart>
     <router-link to="/checkList/">チェックリスト</router-link>
     <router-link to="/">ホーム</router-link>
   </div>
 </template>
 <script>
-import RadarChart from "../../components/Radar.vue"
-import Rank from "../../components/Rank"
+import RadarChart from "../../components/Radar.vue";
+import Rank from "../../components/Rank";
 export default {
   components: { Rank, RadarChart },
-   data() {
+  data() {
     return {
+      result: this.$route.query.id,
       radarChartData: {
         labels: ["A", "B", "C", "D", "E"],
         datasets: [
@@ -40,7 +44,7 @@ export default {
             pointHoverBackgroundColor: "#fff",
             pointHoverBorderColor: "rgba(100, 100, 200, 1)",
             hitRadius: 10,
-          }
+          },
         ],
       },
       radarChartOptions: {
@@ -54,7 +58,7 @@ export default {
           },
         },
         //デフォルトではラベルではなく数値が表示されているので書き換え
-        tooltips : {
+        tooltips: {
           callbacks: {
             title(tooltipItem, data) {
               const idx = tooltipItem[0].index;
@@ -64,13 +68,12 @@ export default {
             label(tooltipItem, data) {
               const idx = tooltipItem.datasetIndex;
               const label = data.datasets[idx].label;
-              return label + ': ' + tooltipItem.value;
-            }
-          }
+              return label + ": " + tooltipItem.value;
+            },
+          },
         },
       },
     }
   },
 };
-
 </script>
