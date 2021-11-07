@@ -35,8 +35,6 @@ const data = {
     'infrastructure',
     'Frontend developing',
     'Security',
-    // 'Management',
-    // 'Bussiness'
   ],
   datasets: [{
     label: 'Your skill score as a frontend developer',
