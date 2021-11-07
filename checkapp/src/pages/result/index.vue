@@ -4,43 +4,65 @@
       <!-- この中にグラフ表示のコードを書いてください -->
     </div>
     <Rank></Rank>
-    <radar-chart :chartData='radarChartData' :options='radarChartOptions'></radar-chart>
+    <radar-chart
+      :chartData="radarChartData"
+      :options="radarChartOptions"
+    ></radar-chart>
     <router-link to="/checkList/">チェックリスト</router-link>
     <router-link to="/">ホーム</router-link>
   </div>
 </template>
 <script>
-import RadarChart from "../../components/Radar.vue"
-import Rank from "../../components/Rank"
+import RadarChart from "../../components/Radar.vue";
+import Rank from "../../components/Rank";
 export default {
   components: { Rank, RadarChart },
-   data() {
+  data() {
     return {
+      total: this.$route.query.id,
       radarChartData: {
-        labels: ["A", "B", "C", "D", "E"],
+        labels: [
+          "Basic CS knowledge",
+          "Backend developing",
+          "Database",
+          "infrastructure",
+          "Frontend developing",
+          "Security",
+        ],
         datasets: [
           {
-            data: [4, 3, 2, 3, 3],
-            label: "平均",
-            backgroundColor: "rgba(200, 100, 100, 0.2)",
-            borderColor: "rgba(200, 100, 100, 1)",
-            pointBackgroundColor: "rgba(200, 100, 100, 1)",
+            data: this.$route.query.id,
+            label: "Your skill score as a software developer",
+            fill: true,
+            backgroundColor: "rgba(0, 181, 204, 0.2)",
+            borderColor: "rgba(0, 181, 204, 1)",
+            pointBackgroundColor: "rgba(0, 181, 204, 1)",
             pointBorderColor: "#fff",
             pointHoverBackgroundColor: "#fff",
-            pointHoverBorderColor: "rgba(200, 100, 100, 1)",
-            hitRadius: 10,
+            pointHoverBorderColor: "gba(0, 181, 204, 1)",
           },
           {
-            data: [5, 2, 4, 1, 3],
-            label: "あなた",
-            backgroundColor: "rgba(100, 100, 200, 0.2)",
-            borderColor: "rgba(100, 100, 200, 1)",
-            pointBackgroundColor: "rgba(100, 100, 200, 1)",
+            label: "Avarage skill score for backend developers",
+            data: [58, 78, 70, 59, 36, 67], // get * developer skills scores from database
+            fill: true,
+            backgroundColor: "rgba(123, 239, 178, 0.2)",
+            borderColor: "rgba(123, 239, 178, 1)",
+            pointBackgroundColor: "rgba(123, 239, 178, 0.2)",
             pointBorderColor: "#fff",
             pointHoverBackgroundColor: "#fff",
-            pointHoverBorderColor: "rgba(100, 100, 200, 1)",
-            hitRadius: 10,
-          }
+            pointHoverBorderColor: "rgba(123, 239, 178, 1)",
+          },
+          {
+            label: "Avarage skill score for fullstack developers",
+            data: [70, 68, 60, 56, 72, 64], // get your skills scores from user input
+            fill: true,
+            backgroundColor: "rgba(247, 202, 24, 0.2)",
+            borderColor: "rgba(247, 202, 24, 1)",
+            pointBackgroundColor: "rgba(247, 202, 24, 0.2)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(247, 202, 24, 1)",
+          },
         ],
       },
       radarChartOptions: {
@@ -48,13 +70,15 @@ export default {
         maintainAspectRatio: false,
         scale: {
           ticks: {
-            suggestedMin: 0,
-            suggestedMax: 5,
-            stepSize: 1,
+            label: false,
+            min: 0,
+            max: 100,
+            stepSize: 10,
+            showLabelBackdrop: false,
           },
         },
         //デフォルトではラベルではなく数値が表示されているので書き換え
-        tooltips : {
+        tooltips: {
           callbacks: {
             title(tooltipItem, data) {
               const idx = tooltipItem[0].index;
@@ -64,13 +88,17 @@ export default {
             label(tooltipItem, data) {
               const idx = tooltipItem.datasetIndex;
               const label = data.datasets[idx].label;
-              return label + ': ' + tooltipItem.value;
-            }
-          }
+              return label + ": " + tooltipItem.value;
+            },
+          },
         },
       },
-    }
+    };
+  },
+  methods: {
+    result() {
+      console.log(this.total);
+    },
   },
 };
-
 </script>

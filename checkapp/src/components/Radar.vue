@@ -1,5 +1,5 @@
 <script>
-import { Radar } from 'vue-chartjs'
+import { Radar } from "vue-chartjs";
 export default {
   extends: Radar,
   props: {
@@ -13,7 +13,7 @@ export default {
     },
   },
   mounted() {
-    this.renderChart(this.chartData, this.options)
-  }
-}
+    this.renderChart(this.chartData, this.options);
+  },
+};
 </script>

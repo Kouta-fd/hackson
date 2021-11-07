@@ -5,9 +5,11 @@
 
     <div v-for="csitem in csitems" :key="csitem.id">
       <label for="CS-1">
-        <input type="checkbox" name="CS" v-model="csitem.checked" />{{
-          csitem.text
-        }}</label
+        <input
+          type="checkbox"
+          name="CS"
+          v-model="csitem.checked"
+        />{{ csitem.text }}</label
       >
     </div>
     <h2>2.Backend development</h2>
@@ -57,7 +59,8 @@
       >
     </div>
 
-    <button id="btn" @click="result">
+    <button id="btn" @click="result">集計</button>
+    <div v-if="this.total.length != 0">
       <router-link
         :to="{
           name: 'result',
@@ -65,7 +68,7 @@
         }"
         >結果を見る</router-link
       >
-    </button>
+    </div>
   </div>
 </template>
 <script>
@@ -73,6 +76,7 @@ export default {
   components: {},
   data() {
     return {
+      total: [],
       csitems: [
         {
           id: "CS-1",
@@ -287,8 +291,7 @@ export default {
       }
 
       // eslint-disable-next-line no-unused-vars
-      var total = {};
-      total = [
+      this.total = [
         (100 * values) / 8,
         (100 * backv) / 3,
         (100 * databasev) / 5,
@@ -296,7 +299,7 @@ export default {
         (100 * frontv) / 5,
         (100 * securityv) / 4,
       ];
-      console.log(total);
+      console.log(this.total);
     },
   },
 };
